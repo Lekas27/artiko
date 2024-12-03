@@ -1,0 +1,14 @@
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-img-top {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.card-body {
+  font-size: 14px;
+  color: #555;
+}

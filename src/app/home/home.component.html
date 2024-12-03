@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <!-- Polje za pretragu -->
+  <div class="row mb-3">
+    <div class="col-md-8 offset-md-2">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by author or description..."
+        [(ngModel)]="searchQuery"
+        (input)="filterPosts()"
+      />
+    </div>
+  </div>
+
+  <!-- Lista postova -->
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card mb-4" *ngFor="let post of filteredPosts">
+        <!-- Prikazivanje korisničkog imena -->
+        <div class="card-header d-flex align-items-center">
+          <strong class="ms-2">{{ post.user.username }}</strong>
+        </div>
+
+        <!-- Prikazivanje slike umetničkog dela -->
+        <img
+          *ngIf="post.image && post.image.length > 0"
+          [src]="'http://localhost:1337' + post.image[0].url"
+          class="card-img-top"
+          alt="Art Work"
+        />
+
+        <!-- Opis umetničkog dela -->
+        <div class="card-body">
+          <p class="card-text">{{ post.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
