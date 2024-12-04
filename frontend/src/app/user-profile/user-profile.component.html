@@ -1,6 +1,33 @@
 <div class="container mt-4">
-    <h2>{{ user?.username }}</h2>
-    <p>Email: {{ user?.email }}</p>
-    <p>Bio: {{ user?.bio }}</p>
+  <div class="profile-header text-center">
+    <img
+      [src]="user?.profilePicture ? user.profilePicture : 'https://placehold.co/600x400.png'"
+      alt="Profile Picture"
+      class="profile-picture"
+    />
+    <h2 class="user-username">{{ user?.username || 'Username' }}</h2>
+    <p class="user-email">Email: {{ user?.email || 'example@example.com' }}</p>
+    <p class="user-bio">Bio: {{ user?.bio || 'No bio available' }}</p>
   </div>
-  
+
+  <!-- User Posts Section -->
+  <div class="row">
+    <div class="col-md-4 mt-4" *ngFor="let post of filteredPosts">
+      <div class="card artistic-card mb-4">
+        <!-- Artwork Image -->
+        <img *ngIf="post.image" [src]="'http://localhost:1337' + post.image[0].url" class="card-img-top" alt="Art Work">
+        
+        <div class="card-body">
+          <h5 class="card-title artistic-card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.description }}</p>
+
+          <!-- Author Info -->
+          <div class="author-info">
+            <small class="text-muted">By: <strong>{{ post.user.username }}</strong></small>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

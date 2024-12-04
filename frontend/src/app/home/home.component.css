@@ -1,14 +1,93 @@
-.card-header {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #ddd;
+/* General Styling */
+.artistic-heading {
+  font-family: 'Cursive', sans-serif;
+  font-size: 3rem;
+  color: #ff7f50;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.artistic-subheading {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  color: #8b4513;
+}
+
+.artistic-search-input {
+  border-radius: 25px;
+  padding-left: 20px;
+  border: 1px solid #8b4513;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.artistic-search-input:focus {
+  border-color: #ff7f50;
+  box-shadow: 0 0 10px rgba(255, 127, 80, 0.8);
+}
+
+.artistic-card {
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.artistic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.artistic-card-title {
+  font-family: 'Cursive', sans-serif;
+  color: #ff7f50;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .card-img-top {
-  max-height: 400px;
+  max-height: 300px;
   object-fit: cover;
+  border-radius: 15px 15px 0 0;
 }
 
-.card-body {
-  font-size: 14px;
+.btn-primary {
+  background-color: #ff7f50;
+  border-color: #ff7f50;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background-color: #ffa07a;
+  border-color: #ffa07a;
+}
+
+/* Author Info */
+.author-info {
+  margin-top: 10px;
+  font-size: 0.9rem;
   color: #555;
+}
+
+.author-info small {
+  color: #777;
+}
+
+.author-info strong {
+  color: #ff7f50;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .artistic-heading {
+    font-size: 2.5rem;
+  }
+
+  .artistic-subheading {
+    font-size: 1rem;
+  }
+
+  .card-img-top {
+    height: 250px;
+  }
 }

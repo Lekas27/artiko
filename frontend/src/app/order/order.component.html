@@ -1,0 +1,47 @@
+<div class="create-order-container">
+  <h2>Create Order</h2>
+  <form (ngSubmit)="createOrder()">
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="description"
+        name="description"
+        required
+        placeholder="Enter the order description"
+      ></textarea>
+    </div>
+
+    <!-- User Selection (searchable list) -->
+    <div class="form-group">
+      <label for="user">Select User:</label>
+      <input
+        type="text"
+        id="user"
+        [(ngModel)]="userQuery"
+        name="user"
+        placeholder="Search for a user"
+        (input)="searchUsers(userQuery)"
+      />
+      <ul *ngIf="filteredUsers.length > 0">
+        <li *ngFor="let user of filteredUsers" (click)="selectUser(user)">
+          {{ user.username }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Post Selection (optional) -->
+    <div class="form-group">
+      <label for="post">Select Post (optional):</label>
+      <select [(ngModel)]="selectedPost" name="post" id="post">
+        <option value="" disabled selected>Select a post</option>
+        <option *ngFor="let post of posts" [value]="post.id">{{ post.title }}</option>
+      </select>
+    </div>
+
+    <button type="submit">Create Order</button>
+
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>
+</div>

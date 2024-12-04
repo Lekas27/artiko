@@ -1,0 +1,103 @@
+/* General Styling */
+.artistic-navbar {
+    background: linear-gradient(45deg, #ff7f50, #ffa07a);
+    border-bottom: 3px solid #8b4513;
+    padding: 10px 20px;
+  }
+  
+  .artistic-navbar .navbar-toggler {
+    border: none;
+  }
+  
+  .artistic-logo {
+    font-family: 'Cursive', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .navbar-search input {
+    border-radius: 25px;
+    padding-left: 20px;
+    border: 1px solid #8b4513;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-search input:focus {
+    border-color: #ff7f50;
+    box-shadow: 0 0 10px rgba(255, 127, 80, 0.8);
+  }
+  
+  .search-input::placeholder {
+    font-style: italic;
+    color: #8b4513;
+  }
+  
+  /* Buttons */
+  .btn {
+    font-family: 'Arial', sans-serif;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #ff7f50;
+    border-color: #ff7f50;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ffa07a;
+    border-color: #ffa07a;
+  }
+  
+  .btn-outline-secondary {
+    color: white;
+    border-color: #8b4513;
+  }
+  
+  .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #8b4513;
+    border-color: #8b4513;
+  }
+  
+  .btn-outline-primary {
+    color: white;
+    border-color: #ff7f50;
+  }
+  
+  .btn-outline-primary:hover {
+    color: #fff;
+    background-color: #ff7f50;
+    border-color: #ff7f50;
+  }
+  
+  /* Navbar responsive behavior using Bootstrap */
+  .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .navbar-nav .nav-item {
+    margin: 5px 0;
+  }
+  
+  .navbar-nav .btn {
+    margin: 5px 0;
+  }
+  
+  /* Adjustments for navbar-toggler and logo in mobile view */
+  .navbar-brand {
+    font-size: 1.8rem;
+  }
+  
+  /* Ensure the navbar and its content are responsive */
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+  

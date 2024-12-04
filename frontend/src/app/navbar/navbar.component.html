@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light artistic-navbar">
   <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand" routerLink="/">Artiko</a>
+    <a class="navbar-brand artistic-logo" routerLink="/">Artiko</a>
 
-    <!-- Hamburger dugme -->
+    <!-- Hamburger Button -->
     <button
       class="navbar-toggler"
       type="button"
@@ -16,14 +16,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Meni -->
+    <!-- Search Bar -->
     <div class="navbar-search d-flex align-items-center position-relative">
       <input
         type="text"
         [(ngModel)]="searchQuery"
         (input)="searchUsers()"
         placeholder="Search users..."
-        class="form-control me-2"
+        class="form-control me-2 search-input"
       />
       <div *ngIf="searchResults.length > 0" class="dropdown-menu show">
         <a
@@ -35,40 +35,32 @@
         </a>
       </div>
     </div>
-    
-    
 
-      <!-- Akcije (Login / Logout) -->
-      <ul class="navbar-nav ms-auto">
-        <ng-container *ngIf="!isLoggedIn">
-          <li class="nav-item">
-            <a class="btn btn-primary mx-1" routerLink="/signup">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-secondary mx-1" routerLink="/login">Login</a>
-          </li>
-        </ng-container>
-       
+    <!-- Actions (Login / Logout) -->
+    <ul class="navbar-nav ms-auto">
+      <ng-container *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a class="btn btn-primary mx-1" routerLink="/signup">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-secondary mx-1" routerLink="/login">Login</a>
+        </li>
+      </ng-container>
 
-<ng-container *ngIf="isLoggedIn">
-  <li class="nav-item">
-    <button
-      (click)="logout()"
-      class="btn btn-outline-primary mx-2"
-    >
-      Logout
-    </button>
-  </li>
-  <li class="nav-item">
-    <a
-      *ngIf="currentUserId"
-      class="btn btn-outline-secondary mx-2"
-      [routerLink]="['/user', currentUserId]"
-    >
-      Profile
-    </a>
-  </li>
-</ng-container>
-      </ul>
-    </div>
+      <ng-container *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <button (click)="logout()" class="btn btn-outline-primary mx-2">Logout</button>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="currentUserId" class="btn btn-outline-secondary mx-2" [routerLink]="['/user', currentUserId]">
+            Profile
+          </a>
+        </li>
+        <div>
+          <a class="btn btn-outline-primary mx-1" routerLink="/createpost">Create Post</a>
+          <a class="btn btn-primary" routerLink="/order">Order</a>
+        </div>
+      </ng-container>
+    </ul>
+  </div>
 </nav>

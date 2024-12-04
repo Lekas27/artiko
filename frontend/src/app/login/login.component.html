@@ -1,30 +1,29 @@
 <div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="login()">
-      <div class="form-group">
-        <label for="identifier">Email/Username:</label>
-        <input
-          type="text"
-          id="identifier"
-          [(ngModel)]="credentials.identifier"
-          name="identifier"
-          class="form-control"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          [(ngModel)]="credentials.password"
-          name="password"
-          class="form-control"
-          required
-        />
-      </div>
-      <button type="submit" class="btn btn-primary">Login</button>
-      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
-    </form>
-  </div>
-  
+  <h2 class="artistic-heading">Login</h2>
+  <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="identifier" class="artistic-label">Email/Username:</label>
+      <input
+        type="text"
+        id="identifier"
+        [(ngModel)]="credentials.identifier"
+        name="identifier"
+        class="form-control artistic-input"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password" class="artistic-label">Password:</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="credentials.password"
+        name="password"
+        class="form-control artistic-input"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary artistic-button mt-4">Login</button>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </form>
+</div>

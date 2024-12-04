@@ -1,37 +1,41 @@
 <div class="container mt-4">
-  <!-- Polje za pretragu -->
-  <div class="row mb-3">
+  <!-- Banner Section -->
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1 class="display-4 artistic-heading">Welcome to Artiko</h1>
+      <p class="lead artistic-subheading">Discover beautiful artworks and posts from amazing artists.</p>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="row mb-4">
     <div class="col-md-8 offset-md-2">
       <input
         type="text"
-        class="form-control"
-        placeholder="Search by author or description..."
+        class="form-control artistic-search-input"
+        placeholder="Search for artworks..."
         [(ngModel)]="searchQuery"
         (input)="filterPosts()"
       />
     </div>
   </div>
 
-  <!-- Lista postova -->
+  <!-- Artworks Gallery -->
   <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <div class="card mb-4" *ngFor="let post of filteredPosts">
-        <!-- Prikazivanje korisničkog imena -->
-        <div class="card-header d-flex align-items-center">
-          <strong class="ms-2">{{ post.user.username }}</strong>
-        </div>
-
-        <!-- Prikazivanje slike umetničkog dela -->
-        <img
-          *ngIf="post.image && post.image.length > 0"
-          [src]="'http://localhost:1337' + post.image[0].url"
-          class="card-img-top"
-          alt="Art Work"
-        />
-
-        <!-- Opis umetničkog dela -->
+    <div class="col-md-4" *ngFor="let post of filteredPosts">
+      <div class="card artistic-card mb-4">
+        <!-- Artwork Image -->
+        <img *ngIf="post.image" [src]="'http://localhost:1337' + post.image[0].url" class="card-img-top" alt="Art Work">
+        
         <div class="card-body">
+          <h5 class="card-title artistic-card-title">{{ post.title }}</h5>
           <p class="card-text">{{ post.description }}</p>
+
+          <!-- Author Info -->
+          <div class="author-info">
+            <small class="text-muted">By: <strong>{{ post.user.username }}</strong></small>
+          </div>
+          
         </div>
       </div>
     </div>

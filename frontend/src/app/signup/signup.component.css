@@ -1,45 +1,91 @@
+/* Signup Form Container */
 .signup-container {
-    max-width: 400px;
-    margin: 50px auto;
+  width: 100%;
+  max-width: 420px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.signup-container:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Heading */
+.artistic-heading {
+  text-align: center;
+  font-family: 'Cursive', sans-serif;
+  color: #ff7f50;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Label Style */
+.artistic-label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Input Fields */
+.artistic-input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.artistic-input:focus {
+  border-color: #ff7f50;
+  box-shadow: 0 0 10px rgba(255, 127, 80, 0.6);
+}
+
+/* Button Style */
+.artistic-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff7f50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.artistic-button:hover {
+  background-color: #ffa07a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 767px) {
+  .signup-container {
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
   }
-  
-  h2 {
-    text-align: center;
-    color: #333;
+
+  .artistic-heading {
+    font-size: 1.8rem;
   }
-  
-  .form-group {
-    margin-bottom: 15px;
+
+  .artistic-input {
+    font-size: 0.9rem;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+
+  .artistic-button {
+    font-size: 1rem;
   }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+}
